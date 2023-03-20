@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+.background{
+    background: rgb(18,18,18);
+    background: linear-gradient(0deg, rgba(18,18,18,1) 30%, rgba(29,13,69,1) 100%);
+
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.play-pause-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.play-pause-button.playing {
+    transform: rotate(90deg);
+}
+
+.play-pause-button::before,
+.play-pause-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.play-pause-button::before {
+    transform: scale(1);
+}
+
+.play-pause-button::after {
+    transform: scale(0);
+}
+
+.play-pause-button.playing::before {
+    opacity: 1;
+    transform: scale(0);
+}
+
+.play-pause-button.playing::after {
+    opacity: 1;
+    transform: scale(1);
+}
